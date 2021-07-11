@@ -6,3 +6,10 @@ export const AnimeListContainer = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
   gap: 3rem;
 `
+
+export const ErrorMessage = styled.p`
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+`

@@ -5,13 +5,16 @@ import { ThemeProvider } from 'styled-components'
 
 import theme from '../styles/theme'
 import GlobalStyle from '../styles/global'
+import { ValueContextProvider } from '../Contexts/ValueContext'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-        <GlobalStyle />
+        <ValueContextProvider>
+          <Component {...pageProps} />
+          <GlobalStyle />
+        </ValueContextProvider>
       </ThemeProvider>
     </>
   )

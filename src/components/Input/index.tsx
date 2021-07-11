@@ -1,17 +1,24 @@
 import React from 'react'
-import { useValue } from '../../Hooks/useValue'
-import { InputContainer } from './style'
+import { useForm } from 'react-hook-form'
+import { IInput } from '../../@types/IInput'
+import useValue from '../../Hooks/useValue'
+import { Button, Form, InputContainer } from './style'
 
 export const Input = (): JSX.Element => {
-  const { value, setValue } = useValue()
+  const { setValue } = useValue()
+  const { register, handleSubmit } = useForm()
+
+  const onSubmit = (data: IInput) => setValue(data.animeName)
 
   return (
     <>
-      <InputContainer
-        placeholder="Digite o nome aqui"
-        value={value}
-        onChange={e => setValue(e.target.value)}
-      />
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <InputContainer
+          placeholder="Digite o nome aqui"
+          {...register('animeName')}
+        />
+        <Button type="submit">SEARCH</Button>
+      </Form>
     </>
   )
 }
