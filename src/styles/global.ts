@@ -13,6 +13,10 @@ export default createGlobalStyle`
     font-family: 400 1rem Roboto, sans-serif;
   }
 
+  input{
+    outline: none;
+  }
+
   a{
     text-decoration: none;
     &:hover{

@@ -9,9 +9,11 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   background: ${props => props.theme.colors.secundary};
   color: ${props => props.theme.colors.primary};
-  @media (max-width: 500px) {
+  @media (max-width: 580px) {
+    text-align: center;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
+    padding-bottom: 4rem;
   }
 `

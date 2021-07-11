@@ -6,5 +6,5 @@ export interface IAnimes {
   type: string
   url: string
   start_date: Date
-  end_date: null | Date
+  end_date: Date | null
 }
