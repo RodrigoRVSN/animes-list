@@ -13,14 +13,24 @@ export function ValueContextProvider({ children }: Props): JSX.Element {
   const [animes, setAnimes] = useState<IAnimes[]>()
   const [error, setError] = useState('')
   const [loading, setLoading] = useState<boolean>()
+  const [loadingMoreAnimes, setLoadingMoreAnimes] = useState<boolean>()
+  const [limit, setLimit] = useState<number>(12)
 
   useEffect(() => {
     async function getAnimes() {
-      setLoading(true)
+      if (limit !== 12) {
+        setLoadingMoreAnimes(true)
+        setLoading(false)
+      } else {
+        setLoading(true)
+        setLoadingMoreAnimes(false)
+      }
+
       await api
-        .get(value)
+        .get(`${value}&limit=${limit}`)
         .then(response => {
           setLoading(false)
+          setLoadingMoreAnimes(false)
           setError('')
           setAnimes(response.data.results)
         })
@@ -30,10 +40,20 @@ export function ValueContextProvider({ children }: Props): JSX.Element {
         })
     }
     getAnimes()
-  }, [value])
+  }, [value, limit])
 
   return (
-    <ValueContext.Provider value={{ value, setValue, animes, error, loading }}>
+    <ValueContext.Provider
+      value={{
+        value,
+        setValue,
+        animes,
+        error,
+        loading,
+        loadingMoreAnimes,
+        setLimit
+      }}
+    >
       {children}
     </ValueContext.Provider>
   )

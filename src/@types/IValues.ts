@@ -6,5 +6,7 @@ export type IValue = {
   value: string
   setValue: Dispatch<SetStateAction<string>>
   loading: boolean
+  loadingMoreAnimes: boolean
   error: string
+  setLimit: Dispatch<SetStateAction<number>>
 }

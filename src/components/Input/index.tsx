@@ -5,16 +5,19 @@ import useValue from '../../Hooks/useValue'
 import { Button, Form, InputContainer } from './style'
 
 export const Input = (): JSX.Element => {
-  const { setValue } = useValue()
+  const { setValue, setLimit } = useValue()
   const { register, handleSubmit } = useForm()
 
-  const onSubmit = (data: IInput) => setValue(data.animeName)
+  const onSubmit = (data: IInput) => {
+    setLimit(12)
+    setValue(data.animeName)
+  }
 
   return (
     <>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <InputContainer
-          placeholder="Digite o nome aqui"
+          placeholder="Type here the name"
           {...register('animeName')}
         />
         <Button type="submit">SEARCH</Button>
