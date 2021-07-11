@@ -27,7 +27,7 @@ export function ValueContextProvider({ children }: Props): JSX.Element {
       }
 
       await api
-        .get(`${value}&limit=${limit}`)
+        .get(`/search/anime?q=${value}&limit=${limit}`)
         .then(response => {
           setLoading(false)
           setLoadingMoreAnimes(false)

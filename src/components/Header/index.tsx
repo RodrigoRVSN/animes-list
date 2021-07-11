@@ -7,7 +7,7 @@ export const Header = (): JSX.Element => {
       <HeaderContainer>
         <h2>ANILIST</h2>
         <h3>
-          Developed by{' '}
+          Desenvolvido por{' '}
           <a
             target="_blank"
             rel="noreferrer"

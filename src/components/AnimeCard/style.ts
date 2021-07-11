@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const AnimeCardContainer = styled.a`
+  cursor: pointer;
   padding: 2rem 1rem;
   background-color: ${props => props.theme.colors.primary};
   border-radius: 1rem;

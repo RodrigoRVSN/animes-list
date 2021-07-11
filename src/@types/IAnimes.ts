@@ -1,4 +1,5 @@
 export interface IAnimes {
+  mal_id: number
   image_url: string
   title: string
   score: number

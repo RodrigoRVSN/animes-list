@@ -26,6 +26,7 @@ export const AnimeList = (): JSX.Element => {
                   return (
                     <AnimeCard
                       key={index}
+                      mal_id={item.mal_id}
                       image_url={item.image_url}
                       title={item.title}
                       score={item.score}
