@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+  color: ${props => props.theme.colors.primary};
   align-items: center;
   margin-top: 5rem;
   gap: 1rem;
@@ -10,16 +11,33 @@ export const InfoContainer = styled.div`
     border-radius: 1rem;
   }
   p {
-    max-width: 35rem;
+    max-width: 60rem;
     padding: 1rem;
-    line-height: 1.5rem;
+    line-height: 2rem;
+    font-size: 1.5rem;
   }
 `
 
 export const PageContainer = styled.div`
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  gap: 5vw;
   @media (max-width: 860px) {
     flex-direction: column;
+  }
+`
+
+export const ExtraContainer = styled.div`
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid ${props => props.theme.colors.secundary};
+  border-radius: 5%;
+  text-align: center;
+  iframe {
+    margin-bottom: 5rem;
+    border-radius: 1rem;
+    @media (max-width: 640px) {
+      width: 90%;
+    }
   }
 `
