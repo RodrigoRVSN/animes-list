@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useContext } from 'react'
-import { ValueContext } from '../Contexts/ValueContext'
+import { ValueContext } from '../contexts/ValueContext'
 
 const useValue = (): any => {
   const value = useContext(ValueContext)
