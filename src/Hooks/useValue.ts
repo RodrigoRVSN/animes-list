@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { IValueContextType } from '../@types/IValueContextType'
-import { ValueContext } from '../contexts/ValueContext'
+import { ValueContext } from '../Contexts/ValueContext'
 
 const useValue = (): IValueContextType => {
   const value = useContext(ValueContext)

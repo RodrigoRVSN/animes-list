@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 
 import theme from '../styles/theme'
 import GlobalStyle from '../styles/global'
-import { ValueContextProvider } from '../contexts/ValueContext'
+import { ValueContextProvider } from '../Contexts/ValueContext'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
