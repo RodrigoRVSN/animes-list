@@ -1,9 +1,9 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { ReactNode, createContext, useEffect, useState } from 'react'
 import { IAnimes } from '../@types/IAnimes'
 import { api } from '../services/api'
 
 interface Props {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export const ValueContext = createContext({})
