@@ -1,12 +1,13 @@
 import React, { ReactNode, createContext, useEffect, useState } from 'react'
 import { IAnimes } from '../@types/IAnimes'
 import { api } from '../services/api'
+import { IValueContextType } from '../@types/IValueContextType'
 
-interface Props {
+type Props = {
   children: ReactNode
 }
 
-export const ValueContext = createContext({})
+export const ValueContext = createContext({} as IValueContextType)
 
 export function ValueContextProvider({ children }: Props): JSX.Element {
   const [value, setValue] = useState<string>('One Piece')
