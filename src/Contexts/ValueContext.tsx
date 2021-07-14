@@ -3,13 +3,15 @@ import { IAnimes } from '../@types/IAnimes'
 import { api } from '../services/api'
 import { IValueContextType } from '../@types/IValueContextType'
 
-type Props = {
+type ValueContextProviderProps = {
   children: ReactNode
 }
 
 export const ValueContext = createContext({} as IValueContextType)
 
-export function ValueContextProvider({ children }: Props): JSX.Element {
+export function ValueContextProvider(
+  props: ValueContextProviderProps
+): JSX.Element {
   const [value, setValue] = useState<string>('One Piece')
   const [animes, setAnimes] = useState<IAnimes[]>()
   const [error, setError] = useState('')
@@ -55,7 +57,7 @@ export function ValueContextProvider({ children }: Props): JSX.Element {
         setLimit
       }}
     >
-      {children}
+      {props.children}
     </ValueContext.Provider>
   )
 }

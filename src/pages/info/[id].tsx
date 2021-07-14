@@ -5,7 +5,11 @@ import { GridArea } from '../../components/GridArea'
 import { Header } from '../../components/Header'
 import { RelatedCard } from '../../components/RelatedCard'
 import { api } from '../../services/api'
-import { ExtraContainer, InfoContainer, PageContainer } from './style'
+import {
+  ExtraContainer,
+  InfoContainer,
+  PageContainer
+} from '../../styles/style'
 
 export default function Info(): JSX.Element {
   const { query } = useRouter()
