@@ -6,6 +6,7 @@ export const Header = (): JSX.Element => {
     <>
       <HeaderContainer>
         <h2>ANILIST</h2>
+        <a href="/">HOME</a>
         <h3>
           Desenvolvido por{' '}
           <a

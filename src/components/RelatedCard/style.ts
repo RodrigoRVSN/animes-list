@@ -13,6 +13,7 @@ export const AnimeCardContainer = styled.a`
   box-shadow: 0.1rem 0.1rem 0.4rem ${props => props.theme.colors.secundary};
   transition: 0.2s ease-in;
   color: ${props => props.theme.colors.secundary};
+  max-width: 20rem;
   &:hover {
     transform: scale(1.05);
     box-shadow: 0.4rem 0.4rem 0.4rem ${props => props.theme.colors.secundary};

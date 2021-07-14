@@ -5,6 +5,7 @@ export const InfoContainer = styled.div`
   flex-direction: column;
   color: ${props => props.theme.colors.primary};
   align-items: center;
+  justify-content: center;
   margin-top: 5rem;
   gap: 1rem;
   img {
@@ -15,6 +16,9 @@ export const InfoContainer = styled.div`
     padding: 1rem;
     line-height: 2rem;
     font-size: 1.5rem;
+  }
+  h2 {
+    text-align: center;
   }
 `
 
@@ -39,5 +43,12 @@ export const ExtraContainer = styled.div`
     @media (max-width: 640px) {
       width: 90%;
     }
+  }
+  h2 {
+    color: ${props => props.theme.colors.secundary};
+    border-top: 1px solid red;
+    padding-top: 4rem;
+    border-top: 1px solid ${props => props.theme.colors.secundary};
+    border-radius: 10%;
   }
 `

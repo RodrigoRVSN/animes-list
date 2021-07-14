@@ -1,6 +1,8 @@
 import { useRouter } from 'next/dist/client/router'
 import React, { useEffect, useState } from 'react'
 import { IAnimeInfo } from '../../@types/IAnimeInfo'
+import { GridArea } from '../../components/GridArea'
+import { Header } from '../../components/Header'
 import { RelatedCard } from '../../components/RelatedCard'
 import { api } from '../../services/api'
 import { ExtraContainer, InfoContainer, PageContainer } from './style'
@@ -19,6 +21,7 @@ export default function Info(): JSX.Element {
 
   return (
     <>
+      <Header />
       <PageContainer>
         <InfoContainer>
           <h4>{animeInfo?.type}</h4>
@@ -42,36 +45,46 @@ export default function Info(): JSX.Element {
             allowFullScreen
           />
         )}
-        {animeInfo?.related.Other?.map(item => {
-          return (
-            <RelatedCard
-              key={item.name}
-              type={item.type}
-              name={item.name}
-              url={item.url}
-            />
-          )
-        })}
-        {animeInfo?.related['Parent story']?.map(item => {
-          return (
-            <RelatedCard
-              key={item.name}
-              type={item.type}
-              name={item.name}
-              url={item.url}
-            />
-          )
-        })}
-        {animeInfo?.related.Prequel?.map(item => {
-          return (
-            <RelatedCard
-              key={item.name}
-              type={item.type}
-              name={item.name}
-              url={item.url}
-            />
-          )
-        })}
+        {animeInfo?.related.Other && <h2>Others</h2>}
+        <GridArea>
+          {animeInfo?.related.Other?.map(item => {
+            return (
+              <RelatedCard
+                key={item.name}
+                type={item.type}
+                name={item.name}
+                url={item.url}
+              />
+            )
+          })}
+        </GridArea>
+        {animeInfo?.related['Parent story'] && <h2>Parent story</h2>}
+        <GridArea>
+          {animeInfo?.related['Parent story']?.map(item => {
+            return (
+              <RelatedCard
+                key={item.name}
+                type={item.type}
+                name={item.name}
+                url={item.url}
+              />
+            )
+          })}
+        </GridArea>
+
+        {animeInfo?.related.Prequel && <h2>Prequel</h2>}
+        <GridArea>
+          {animeInfo?.related.Prequel?.map(item => {
+            return (
+              <RelatedCard
+                key={item.name}
+                type={item.type}
+                name={item.name}
+                url={item.url}
+              />
+            )
+          })}
+        </GridArea>
       </ExtraContainer>
     </>
   )
