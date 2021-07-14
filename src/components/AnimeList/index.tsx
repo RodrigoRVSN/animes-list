@@ -1,6 +1,6 @@
 import React from 'react'
 import { IAnimes } from '../../@types/IAnimes'
-import useValue from '../../Hooks/useValue'
+import useValue from '../../hooks/useValue'
 import { AnimeCard } from '../AnimeCard'
 import { ButtonMoreAnimes } from '../ButtonMoreAnimes'
 import { ErrorWidget } from '../ErrorWidget'

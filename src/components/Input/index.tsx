@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { IInput } from '../../@types/IInput'
-import useValue from '../../Hooks/useValue'
+import useValue from '../../hooks/useValue'
 import { Button, Form, InputContainer } from './style'
 
 export const Input = (): JSX.Element => {

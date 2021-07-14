@@ -1,5 +1,5 @@
 import React from 'react'
-import useValue from '../../Hooks/useValue'
+import useValue from '../../hooks/useValue'
 import { Button } from '../Input/style'
 import { ButtonContainer } from './style'
 
